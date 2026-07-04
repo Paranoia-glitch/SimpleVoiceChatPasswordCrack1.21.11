@@ -18,18 +18,16 @@ public class AddonTemplate extends MeteorAddon {
     public static final Category CATEGORY = new Category("Example");
     public static final HudGroup HUD_GROUP = new HudGroup("Example");
 
-    @Override
+       @Override
     public void onInitialize() {
         LOG.info("Initializing Meteor Addon Template");
 
-        // Modules
-        Modules.get().add(new ModuleExample());
+        // Регистрируем наш модуль для тестирования голосового чата
+        Modules.get().add(new example.addon.modules.VoiceChatTester());
 
-        // Commands
-        Commands.add(new CommandExample());
-
-        // HUD
-        Hud.get().register(HudExample.INFO);
+      
+        // Commands.add(new CommandExample());
+        // Hud.get().register(HudExample.INFO);
     }
 
     @Override
